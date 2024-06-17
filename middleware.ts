@@ -8,7 +8,7 @@ export default function middleware(request: NextRequest) {
   const country = geo?.country || 'Unknown';
   const city = geo?.city || 'Unknown';
   requestHeaders.set('x-country', country);
-  requestHeaders.set('x-ip', ip!);
+  requestHeaders.set('x-ip', ip || '127.0.0.1');
 
   const x = specialChars.filter((char) => {
     if (ip?.includes(char.toString())) {
