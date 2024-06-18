@@ -12,7 +12,7 @@ type Data = {
   specialMsg: string;
 };
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 export const getServerSideProps = (async (
   context: GetServerSidePropsContext
@@ -37,11 +37,11 @@ export default function Home({
             {translations[data.country]}
           </div>
           <div>
-            <p className="text-slate-700 text-lg">
+            <p className="text-slate-700 text-2xl">
               Your IP address is: {data.ip}
             </p>
           </div>
-          <div>
+          <div className='py-2 px-2 rounded-full text-center text-white bg-blue-500'>
             <Link
               href={{
                 pathname: '/regional',
