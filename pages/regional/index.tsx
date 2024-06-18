@@ -17,7 +17,7 @@ export const getServerSideProps = (async (
   context: GetServerSidePropsContext
 ) => {
   const ip = context.query.ip as string;
-  const response = await fetch(process.env.URL + '/api/regional', {
+  const response = await fetch('/api/regional', {
     method: 'POST',
     body: JSON.stringify({ ip }),
   });
