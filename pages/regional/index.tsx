@@ -11,13 +11,15 @@ type Data = {
   msg: string;
 };
 
-export const runtime = 'experimental-edge';
+export const config = {
+  runtime: 'experimental-edge',
+};
 
 export const getServerSideProps = (async (
   context: GetServerSidePropsContext
 ) => {
   const ip = context.query.ip as string;
-  const response = await fetch('/api/regional', {
+  const response = await fetch('https://edge.coregate.dev/api/regional', {
     method: 'POST',
     body: JSON.stringify({ ip }),
   });

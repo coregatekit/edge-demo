@@ -1,3 +1,4 @@
+import { deployRegions } from '@/constant';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 type PostBody = {
@@ -8,6 +9,11 @@ type Data = {
   ip: string;
   sum: number;
   msg: string;
+};
+
+export const config = {
+  runtime: 'experimental-edge',
+  regions: deployRegions,
 };
 
 export default async function handler(

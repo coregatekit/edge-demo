@@ -14,3 +14,4 @@ export const translations: { [key: string]: string } = {
   TH: 'สวัสดี!',
   US: 'Hello!',
 };
+export const deployRegions = ['iad1', 'bom1', 'cpt1', 'fra1', 'gru1', 'hkg1', 'hnd1', 'sin1', 'syd1'];
