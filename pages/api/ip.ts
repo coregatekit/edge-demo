@@ -13,7 +13,7 @@ export default async function handler(
       const body = {
         ip,
         sum,
-        msg: `I am an Edge function! (executed on ${process.env.VERCEL_REGION})`,
+        msg: `I am an Edge function! (executed on ${process.env.VERCEL_REGION} - ${process.env.VERCEL_REGION_NAME})`,
       };
       return new Response(JSON.stringify(body), { status: 200 });
     }
