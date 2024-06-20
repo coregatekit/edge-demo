@@ -1,7 +1,6 @@
 import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
-export const regions = ['gru1'];
 export const fetchCache = 'force-no-store';
 
 export default async function handler(

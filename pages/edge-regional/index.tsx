@@ -1,8 +1,4 @@
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-} from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 
 type Data = {
@@ -15,14 +11,8 @@ export const config = {
   runtime: 'experimental-edge',
 };
 
-export const getServerSideProps = (async (
-  context: GetServerSidePropsContext
-) => {
-  const ip = context.query.ip as string;
-  const response = await fetch('https://edge.coregate.dev/api/regional', {
-    method: 'POST',
-    body: JSON.stringify({ ip }),
-  });
+export const getServerSideProps = (async () => {
+  const response = await fetch('https://edge.coregate.dev/api/ip');
   if (!response.ok) {
     const error = await response.json();
     return {
