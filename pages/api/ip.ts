@@ -2,7 +2,6 @@ import { regionMapping } from '@/constant';
 import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
-export const fetchCache = 'force-no-store';
 
 export default async function handler(
   req: NextRequest,
