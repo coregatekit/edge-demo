@@ -8,7 +8,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=59',
+            value: 'max-age=0, s-maxage=60, stale-while-revalidate=59',
           },
         ],
       },
@@ -17,7 +17,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=59',
+            value: 'max-age=0, s-maxage=60, stale-while-revalidate=59',
           },
         ],
       },
