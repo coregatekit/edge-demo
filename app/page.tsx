@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { translations } from './constant';
 
-export default function Home() {
+export default function Page() {
   const data = {
     country: 'TH',
     ip: '127.0.0.1',
@@ -20,11 +20,10 @@ export default function Home() {
               Your IP address is: {data.ip}
             </p>
           </div>
-          <div className='py-2 px-2 rounded-full text-center text-white bg-blue-500'>
+          <div className="py-2 px-2 rounded-full text-center text-white bg-blue-500">
             <Link
               href={{
-                pathname: '/regional',
-                query: { ip: data.ip },
+                pathname: '/edge',
               }}
             >
               Go to regional
