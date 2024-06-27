@@ -20,13 +20,22 @@ export default function Page() {
               Your IP address is: {data.ip}
             </p>
           </div>
-          <div className="py-2 px-2 rounded-full text-center text-white bg-blue-500">
+          <div className="mt-4 py-2 px-2 rounded-full text-center text-white bg-blue-500">
             <Link
               href={{
-                pathname: '/edge',
+                pathname: '/btc',
               }}
             >
-              Go to regional
+              Check BTC
+            </Link>
+          </div>
+          <div className="mt-4 py-2 px-2 rounded-full text-center text-white bg-blue-500">
+            <Link
+              href={{
+                pathname: '/ip',
+              }}
+            >
+              Sum Your IP
             </Link>
           </div>
         </div>
