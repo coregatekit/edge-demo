@@ -1,6 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: '/regional',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 's-maxage=1, stale-while-revalidate=59',
+          },
+        ],
+      },
+      {
+        source: '/edge-regional',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 's-maxage=1, stale-while-revalidate=59',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

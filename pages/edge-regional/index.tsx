@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Link from 'next/link';
 
@@ -28,7 +29,7 @@ export default function Regional({
   return (
     <div>
       <div className="flex justify-center">
-        <div className="flex-col my-36">
+        <div className="flex-col my-20">
           <div className=" w-4/5 text-xl text-slate-700 font-bold">
             {data.msg}
           </div>
@@ -39,9 +40,17 @@ export default function Regional({
             <p className="text-slate-700 text-lg">
               Sum of IP address is: {data.sum}
             </p>
-            <div>
-              <Link href="/">Back to Home</Link>
-            </div>
+          </div>
+          <div>
+            <Image
+              src="/winter-supernova.gif"
+              alt="winter-supernova"
+              width={500}
+              height={500}
+            />
+          </div>
+          <div>
+            <Link href="/">Back to Home</Link>
           </div>
         </div>
       </div>
