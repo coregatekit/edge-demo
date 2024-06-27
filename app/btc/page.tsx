@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const revalidate = 300;
+
 async function getData() {
-  const res = await fetch('https://edge.coregate.dev/api/contents/btc-price');
+  const res = await fetch('https://edge.coregate.dev/api/contents/btc-price', {
+    cache: 'force-cache',
+  });
 
   if (!res.ok) {
     return { error: true, msg: 'Unable to fetch data!' };
@@ -39,7 +43,12 @@ export default async function Page() {
             </div>
             <div>
               {data.error ? (
-                <Image src="/winter-error.gif" alt="error" width={200} height={200} />
+                <Image
+                  src="/winter-error.gif"
+                  alt="error"
+                  width={200}
+                  height={200}
+                />
               ) : (
                 <Image src="/btc.gif" alt="btc gif" width={500} height={500} />
               )}
