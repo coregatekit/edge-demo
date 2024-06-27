@@ -1,5 +1,6 @@
+export const runtime = 'edge';
+
 export function GET(request: Request) {
-  console.log(request.headers);
   const ip = request.headers.get('x-forwarded-for');
 
   if (!ip) {
