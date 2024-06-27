@@ -1,23 +1,23 @@
 import Link from 'next/link';
 import { translations } from './constant';
+import { headers } from 'next/headers';
 
-export default function Page() {
-  const data = {
-    country: 'TH',
-    ip: '127.0.0.1',
-    specialMsg: 'show',
-  };
+export default async function Page() {
+  const headersList = headers();
+  const country = headersList.get('x-country')!;
+  const ip = headersList.get('x-forwarded-for');
+  const specialMsg = headersList.get('x-special-msg');
 
   return (
     <div>
       <div className="flex justify-center">
         <div className="flex-col my-36">
           <div className="text-4xl text-slate-700 font-bold">
-            {translations[data.country]}
+            {translations[country]}
           </div>
           <div>
             <p className="text-slate-700 text-2xl">
-              Your IP address is: {data.ip}
+              Your IP address is: {ip}
             </p>
           </div>
           <div className="mt-4 py-2 px-2 rounded-full text-center text-white bg-blue-500">
@@ -40,7 +40,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {data.specialMsg === 'show' && (
+      {specialMsg === 'show' && (
         <div
           className="fixed top-0 w-full bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3"
           role="alert"
