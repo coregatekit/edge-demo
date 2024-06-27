@@ -36,7 +36,7 @@ export default async function Page() {
                     Current Bitcoin Price: {data.price}
                   </p>
                   <p className="text-slate-500 text-md">
-                    Last update {new Date(data.timestamp).toLocaleTimeString()}
+                    Last update from mempool {new Date(data.timestamp).toTimeString()}
                   </p>
                 </>
               )}
