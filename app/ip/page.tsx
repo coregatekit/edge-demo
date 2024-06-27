@@ -2,7 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 async function getData() {
-  const res = await fetch('https://edge.coregate.dev/api/contents/ip');
+  const res = await fetch('https://edge.coregate.dev/api/contents/ip', {
+    cache: 'no-store',
+  });
 
   if (!res.ok) {
     return { error: true, msg: 'Unable to fetch data!' };
