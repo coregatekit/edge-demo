@@ -33,4 +33,6 @@ export const regionMapping: { [key: string]: string } = {
   sfo1: 'San Francisco, USA',
   sin1: 'Singapore',
   syd1: 'Sydney, Australia',
+  dev1: 'Local Development',
+  unknown: 'Unknown',
 };

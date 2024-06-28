@@ -1,3 +1,5 @@
+import { regionMapping } from '@/app/constant';
+
 export const runtime = 'edge';
 
 export function GET(request: Request) {
@@ -13,10 +15,11 @@ export function GET(request: Request) {
   }
 
   const sum = ips.reduce((acc, val) => acc + parseInt(val), 0);
+  const region = process.env.VERCEL_REGION || 'unknown';
   const body = {
     ip,
     sum,
-    msg: `Hello, I am vercel function executed from ${process.env.VERCEL_REGION}`,
+    msg: `Hello, I am vercel function executed from ${region} - ${regionMapping[region]}`,
   };
   return new Response(JSON.stringify(body), { status: 200 });
 }
